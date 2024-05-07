@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{%load static%}
+
+    {%block content%}
+
+    {% for post in object_list %}
+    <h2> <a href="{% url 'detail_page' post.pk %}"> {{post.title}} </a> </h2>
+    <h4 style="color: green">{{post.text | slice:200}}...... </h4>
+    
+    {%endfor%}
+
+    <h2><a href={% url "Create_view" %}> <button type="submit"> Adding New Post </button> </a></h2>
+
+    {%endblock content%}
